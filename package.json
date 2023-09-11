@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "lunr-folding": "^0.0.2"
+  }
+}
