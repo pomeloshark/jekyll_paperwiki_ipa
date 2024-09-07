@@ -2,8 +2,8 @@
 
 require_relative "jekyll_paperwiki_ipa/version"
 
-# usage: {% ipa /phonemic text/%}
-# usage: {% ipa [phonetic text]%}
+# usage: {% ipa /phonemic text/ %}
+# usage: {% ipa [phonetic text] %}
 
 module Jekyll
    module Tags
@@ -12,7 +12,7 @@ module Jekyll
          # initialize is called when we encounter the {% ipa %} Liquid tag; 'ipa' is the tag name and anything immediately after it is passed in via the second argument
          def initialize(tag_name, text, tokens)
             super
-            @text = text
+            @text = text.rstrip!
          end
 
          def render(context)
